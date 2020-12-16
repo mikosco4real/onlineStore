@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    ports:
+      - 8000:8000
+    stdin_open: true
+    tty: true
+    command: "python store/manage.py runserver 0:8000"
+    volumes:
+      - .:/home/app
+    container_name: django_app
